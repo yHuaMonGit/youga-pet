@@ -12,8 +12,10 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>有家宠物双十一活动大放送</title>
     <link rel="stylesheet" href="../static/css/normalize.css"/>
-    <link rel="stylesheet" href="../static/libs/font-awesome-4.5.0/css/font-awesome.min.css"/>
+    <--link rel="stylesheet" href="../static/libs/font-awesome-4.5.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="../static/css/app.css"/>
+    <script src="../static/libs/zepto/zepto.min.js"></script>
+    <script src="../static/js/app.js"></script>
 
 </head>
 <body>
@@ -208,46 +210,15 @@
         <input type="search" placeholder="蕾丝裙" />
     </div>
     <div class="prodoct">
-        <ul>
-            <script type="text/javascript">
-                addGoodsLi("../static/img/bnwgxy.jpg",${good1._goosName},${good1._goosPrice},${good1._goosNum})
+        <ul id="goodslist">
+            <script>
+                addGoodsLi("goodslist","../static/img/bnwgxy.jpg","${good1._goosName}","${good1._goosPrice}","${good1._goosNum}")
             </script>
 
-
-
-            <li>
-                <a href="details.html">
-                    <img src="../static/img/bnwgxy.jpg" />
-                    <span class="GoodsInfo">货品名称:${good1._goosName}</span>
-                    <span class="GoodsInfo">￥${good1._goosPrice}</span>
-                    <span class="GoodsInfo">库存量:${good1._goosNum}</span>
-                </a>
-            </li>
-            <li>
-                <a href="details.html">
-                    <img src="../static/img/bnwgxy.jpg" />
-                    <p>伯纳天纯无谷低敏系列小型犬成犬</p>
-                    <span>￥60.99</span>
-                </a>
-            </li>
-            <li>
-                <a href="details.html">
-                    <img src="../static/img/bnwgxy.jpg" />
-                    <p>味臻纯系列小型犬成犬</p>
-                    <span>￥60.99</span>
-                </a>
-            </li>
-            <li>
-                <a href="details.html">
-                    <img src="../static/img/bnwgxy.jpg" />
-                    <p>味臻纯系列小型犬幼犬</p>
-                    <span>￥60.99</span>
-                </a>
-            </li>
         </ul>
     </div>
 </div>
-<script src="../static/libs/zepto/zepto.min.js"></script>
-<script src="../static/js/app.js"></script>
+
+
 </body>
 </html>

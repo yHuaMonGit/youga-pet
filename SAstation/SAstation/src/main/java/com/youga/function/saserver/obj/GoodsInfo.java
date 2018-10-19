@@ -2,10 +2,39 @@ package com.youga.function.saserver.obj;
 
 public class GoodsInfo {
 
+    public  String _goosPic;
     public  String _goosName;
     public int _goosNum;
     public int _goosPrice;
     public  String _goosIndroduce;
+    public int _goosPrePrice;
+
+    public GoodsInfo(String goodsName, int goodsPrice, int goodsNum, String goodsDes, String goodsPic, int goodsPrePrice) {
+
+        this.set_goosName(goodsName);
+        this.set_goosPrice(goodsPrice);
+        this.set_goosPic(goodsPic);
+        this.set_goosNum(goodsNum);
+        this.set_goosIndroduce(goodsDes);
+        this.set_goosPrePrice(goodsPrePrice);
+
+    }
+
+    public int get_goosPrePrice() {
+        return _goosPrePrice;
+    }
+
+    public void set_goosPrePrice(int _goosPrePrice) {
+        this._goosPrePrice = _goosPrePrice;
+    }
+
+    public String get_goosPic() {
+        return _goosPic;
+    }
+
+    public void set_goosPic(String _goosPic) {
+        this._goosPic = _goosPic;
+    }
 
     public  String get_goosName() {
         return _goosName;

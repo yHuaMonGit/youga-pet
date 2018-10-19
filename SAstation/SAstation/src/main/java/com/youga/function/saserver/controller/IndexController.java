@@ -7,13 +7,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
 @RequestMapping("/home")
 public class IndexController {
 
-    GoodsInfo good1 ;
+    public List<GoodsInfo> goodslist = new ArrayList<GoodsInfo>();
 
     @RequestMapping("/index")
     public String index() {
@@ -24,9 +26,14 @@ public class IndexController {
     @RequestMapping("/sellCenter")
     public String sellCenter(HttpServletRequest request, Model model) {
 
-        good1 = GoodsService.getgood();
-
-        model.addAttribute("good1",good1);
+        goodslist = GoodsService.getgood();
+        int count = 1;
+        for(GoodsInfo good :goodslist)
+        {
+            String goodsID = "goods"+count;
+            model.addAttribute(goodsID,good);
+            count++;
+        }
 
         return "sellCenter";
     }
