@@ -15,6 +15,7 @@ public class GoodsService {
 
     public static List<GoodsInfo> getgood() {
 
+        goodsList.clear();
         goodsList = goodsDao.findAllPets();
 
         return goodsList;

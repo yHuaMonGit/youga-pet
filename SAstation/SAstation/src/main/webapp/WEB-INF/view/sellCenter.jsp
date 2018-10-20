@@ -12,7 +12,7 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>有家宠物双十一活动大放送</title>
     <link rel="stylesheet" href="../static/css/normalize.css"/>
-    <--link rel="stylesheet" href="../static/libs/font-awesome-4.5.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="../static/css/app.css"/>
     <script src="../static/libs/zepto/zepto.min.js"></script>
     <script src="../static/js/app.js"></script>
@@ -212,7 +212,7 @@
     <div class="prodoct">
         <ul id="goodslist">
             <script>
-                addGoodsLi("goodslist","../static/img/bnwgxy.jpg","${good1._goosName}","${good1._goosPrice}","${good1._goosNum}")
+                addGoodsLi("goodslist",${goodslistJson})
             </script>
 
         </ul>

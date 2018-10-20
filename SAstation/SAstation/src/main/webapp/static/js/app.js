@@ -36,130 +36,137 @@ $(".fa-shopping-cart").tap(function() {
     $(".shop-cart").toggle();
 })
 $(".cart-item").swipeRight(function() {
-	$(this).addClass("delet-item")
+    $(this).addClass("delet-item")
 })
 $(".cart-item").swipeLeft(function() {
-		$(this).removeClass("delet-item")
-	})
+    $(this).removeClass("delet-item")
+})
 //页面跳转
 $(".shop-cart input").tap(function(){
-	location.href="checkout.html"
+    location.href="checkout.html"
 })
 
-	//删除(注释弹窗，不适用)
+//删除(注释弹窗，不适用)
 $(".cart-item button").tap(function() {
-		//	$(".popupbox").show()
-		$(this).parent().hide()
-	})
-	//$(".popupbox .popup .true-btn").tap(function(){
-	//	$(".popupbox").hide();
-	//	$(".shop-cart .cart-item").hide()
-	//})
-	//$(".popupbox .popup .false-btn").tap(function(){
-	//	$(".popupbox").hide();
-	//})
-	//购物车的数字加减
+    //	$(".popupbox").show()
+    $(this).parent().hide()
+})
+//$(".popupbox .popup .true-btn").tap(function(){
+//	$(".popupbox").hide();
+//	$(".shop-cart .cart-item").hide()
+//})
+//$(".popupbox .popup .false-btn").tap(function(){
+//	$(".popupbox").hide();
+//})
+//购物车的数字加减
 $(".shop-cart .add .fa-chevron-up").tap(function() {
-	var add = $(".shop-cart ul li b").text();
-	add = parseInt(add) + 1
-	$(".shop-cart ul li b").text(add)
+    var add = $(".shop-cart ul li b").text();
+    add = parseInt(add) + 1
+    $(".shop-cart ul li b").text(add)
 })
 $(".shop-cart .add .fa-chevron-down").tap(function() {
-		var minus = $(".shop-cart ul li b").text();
-		minus = parseInt(minus) - 1;
-		$(".shop-cart ul li b").text(minus);
-		if (minus < 0) {
-			$(".shop-cart ul li b").text(0);
-		}
-	})
-	//排序
+    var minus = $(".shop-cart ul li b").text();
+    minus = parseInt(minus) - 1;
+    $(".shop-cart ul li b").text(minus);
+    if (minus < 0) {
+        $(".shop-cart ul li b").text(0);
+    }
+})
+//排序
 $(".fa-tag").tap(function() {
-		if ($(this).hasClass("tag-white")) {
-			$(this).removeClass("tag-white")
-		} else {
-			$(this).addClass("tag-white")
-		}
-		$(".shop-sort").toggle();
-	})
-	//$(".shop-sort span").tap(function(){
-	//	$(".shop-sort span").removeClass("sort-active");
-	//	$(this).addClass("sort-active");
-	//})
+    if ($(this).hasClass("tag-white")) {
+        $(this).removeClass("tag-white")
+    } else {
+        $(this).addClass("tag-white")
+    }
+    $(".shop-sort").toggle();
+})
+//$(".shop-sort span").tap(function(){
+//	$(".shop-sort span").removeClass("sort-active");
+//	$(this).addClass("sort-active");
+//})
 
 //推荐等
 //$(".fa-chevron-left").tap(function() {
 //		location.href = "index.html"
 //	})
-	//产品
+//产品
 $(".prodocts .filter-btn span i").tap(function() {
-		$(this).parent().hide()
-	})
-	//分类
+    $(this).parent().hide()
+})
+//分类
 $(".assort .assort-head").tap(function() {
-		if ($(this).parent().hasClass("show-assort")) {
-			$(".assort").removeClass("show-assort");
-			$(".assort .assort-head .fa").removeClass("fa-angle-down").addClass("fa-angle-right");
-			$(".top-header").css({
-				backgroundColor: "#67b0d6"
-			});
-		} else {
-			$(".assort").addClass("show-assort");
-			$(".assort .assort-head .fa").removeClass("fa-angle-right").addClass("fa-angle-down");
-			$(".top-header").css({
-				backgroundColor: "#38474f"
-			});
-		}
+    if ($(this).parent().hasClass("show-assort")) {
+        $(".assort").removeClass("show-assort");
+        $(".assort .assort-head .fa").removeClass("fa-angle-down").addClass("fa-angle-right");
+        $(".top-header").css({
+            backgroundColor: "#67b0d6"
+        });
+    } else {
+        $(".assort").addClass("show-assort");
+        $(".assort .assort-head .fa").removeClass("fa-angle-right").addClass("fa-angle-down");
+        $(".top-header").css({
+            backgroundColor: "#38474f"
+        });
+    }
 
-		$(".assort dl").toggle();
-	})
-	//筛选
+    $(".assort dl").toggle();
+})
+//筛选
 $(".top-header .fa-filter").tap(function() {
-	$(".filter").css({
-		right: 0
-	});
-	$(".filter-head").css({
-		right: 0
-	});
+    $(".filter").css({
+        right: 0
+    });
+    $(".filter-head").css({
+        right: 0
+    });
 })
 $(".filter .fa-filter").tap(function() {
-	$(".filter-head").css({
-		right: "-240px"
-	});
-	$(".filter").css({
-		right: "-240px"
-	});
+    $(".filter-head").css({
+        right: "-240px"
+    });
+    $(".filter").css({
+        right: "-240px"
+    });
 })
 $("#quxiao").tap(function() {
-	$(".filter-head").css({
-		right: "-240px"
-	});
-	$(".filter").css({
-		right: "-240px"
-	});
+    $(".filter-head").css({
+        right: "-240px"
+    });
+    $(".filter").css({
+        right: "-240px"
+    });
 })
 //详情
 $(".dis-head").tap(function(){
-	$(".discription figure").toggle()
+    $(".discription figure").toggle()
 })
 //支付
 $(".order dl .fa-close").tap(function(){
-	$(this).parent().parent().hide()
+    $(this).parent().parent().hide()
 })
 
 //自动生成商品组件
-function addGoodsLi(obj,picUrl,goodsName,goodsPrice,goodsNum)
+function addGoodsLi(obj,goodslistJson)
 {
+    var basePath = "../static/img/";
     var parent = document.getElementById(obj);
-    var li_1=document.createElement("li");
-    li_1.setAttribute("class","newLi");
-    addImg(li_1,picUrl)
-    goodsName="商品名称："+goodsName;
-    addSpan(li_1,goodsName);
-    goodsPrice="价格：￥"+goodsPrice;
-    addSpan(li_1,goodsPrice);
-    goodsNum="库存量："+goodsNum;
-    addSpan(li_1,goodsNum);
-    parent.appendChild(li_1);
+    var goodslist = goodslistJson;
+
+    for (var i = 0 ; i < goodslistJson.length ; i++)
+    {
+        var picUrl = basePath+goodslistJson[i]._goosPic;
+        var goodsName = "商品名称："+goodslistJson[i]._goosName;
+        var goodsPrice = "价格：￥"+goodslistJson[i]._goosPrice;
+        var goodsNum = "库存量："+goodslistJson[i]._goosNum;
+        var li_1=document.createElement("li");
+        li_1.setAttribute("class","newLi");
+        addImg(li_1,picUrl)
+        addSpan(li_1,goodsName);
+        addSpan(li_1,goodsPrice);
+        addSpan(li_1,goodsNum);
+        parent.appendChild(li_1);
+    }
 }
 
 function testjs()

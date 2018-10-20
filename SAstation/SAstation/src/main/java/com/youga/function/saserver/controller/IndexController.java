@@ -2,10 +2,10 @@ package com.youga.function.saserver.controller;
 
 import com.youga.function.saserver.obj.GoodsInfo;
 import com.youga.function.saserver.service.GoodsService;
+import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,16 +24,13 @@ public class IndexController {
     }
 
     @RequestMapping("/sellCenter")
-    public String sellCenter(HttpServletRequest request, Model model) {
+    public String sellCenter(HttpServletRequest request, ModelMap model) {
 
         goodslist = GoodsService.getgood();
-        int count = 1;
-        for(GoodsInfo good :goodslist)
-        {
-            String goodsID = "goods"+count;
-            model.addAttribute(goodsID,good);
-            count++;
-        }
+
+        String goodslistString = JSONArray.fromObject(goodslist).toString();
+
+        model.addAttribute("goodslistJson",goodslistString);
 
         return "sellCenter";
     }
