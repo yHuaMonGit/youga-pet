@@ -3,10 +3,18 @@ package com.youga.function.saserver.obj;
 public class MemberInfo {
 
 
+    public static String MEMBER_LEVEL_1 = "青铜";
+    public static String MEMBER_LEVEL_2 = "白银";
+    public static String MEMBER_LEVEL_3 = "黄金";
+    public static String MEMBER_LEVEL_4 = "白金";
+    public static String MEMBER_LEVEL_5 = "钻石";
+    public static String MEMBER_LEVEL_6 = "王者";
+
+
     public String memberID = null ;
 
     public String memberLevel = null ;
-
+    //积分
     public String integral = null ;
 
     public String memberFlag = null ;
@@ -15,16 +23,28 @@ public class MemberInfo {
 
     public String openid = null ;
     //累计消费金额
-    public String Amount = null;
+    public String amount = null;
 
-    public MemberInfo(String memberID, String memberLevel, String integral, String memberFlag, String msisdn, String openid, String amount) {
+    public String balance = null;
+
+    public MemberInfo(String memberID, String memberLevel, String integral, String memberFlag, String msisdn, String openid, String amount, String balance) {
         this.memberID = memberID;
         this.memberLevel = memberLevel;
         this.integral = integral;
         this.memberFlag = memberFlag;
         this.msisdn = msisdn;
         this.openid = openid;
-        this.Amount = amount;
+        this.amount = amount;
+        this.balance = balance;
+    }
+    public MemberInfo(){}
+
+    public String getBalance() {
+        return balance;
+    }
+
+    public void setBalance(String balance) {
+        this.balance = balance;
     }
 
     public String getMemberID() {
@@ -76,10 +96,10 @@ public class MemberInfo {
     }
 
     public String getAmount() {
-        return Amount;
+        return amount;
     }
 
     public void setAmount(String amount) {
-        Amount = amount;
+        amount = amount;
     }
 }

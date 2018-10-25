@@ -34,6 +34,15 @@ public class BaseDao {
         }
     }
 
+    public static void closeAll(Connection conn, Statement stmt ) throws SQLException {
+        if(stmt!=null) {
+            stmt.close();
+        }
+        if(conn!=null) {
+            conn.close();
+        }
+    }
+
 
     public int executeSQL(String preparedSql, Object[] param) throws ClassNotFoundException {
         Connection conn = null;

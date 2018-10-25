@@ -20,6 +20,7 @@ public class WxInfo {
         this.province = province;
         this.sex = sex;
     }
+    public WxInfo(){}
 
     public String getUserName() {
         return userName;

@@ -30,7 +30,8 @@
     <![endif]-->
 </head>
 <body class="huibg">
-<div class="vipcenter">
+<div class="vipcenter" id="vipCenter">
+
     <div class="vipheader" id="vipHead">
 
         <script>
@@ -40,12 +41,18 @@
 
         <div class="gztt">认证会员，已关注</div>
     </div>
-    <div class="vipsan">
-        <div class="col-xs-4 text-center"><a ><h4>等级</h4><p>Vip1</p></a></div>
-        <div class="col-xs-4 text-center"><a ><h4>积分</h4><p>1200</p></a></div>
-        <div class="col-xs-4 text-center"><a ><h4>领取码</h4><p>3</p></a></div>
+    <div class="vipsan" id="vipSpan">
+        <div class="col-xs-4 text-center"><a ><h4>等级</h4><p id="level">
+            <script>getmemberInfo(${userInfoList},"level")</script>
+        </p></a></div>
+        <div class="col-xs-4 text-center"><a ><h4>积分</h4><p id="integral">
+            <script>getmemberInfo(${userInfoList},"integral")</script>
+        </p></a></div>
+        <div class="col-xs-4 text-center"><a ><h4>账户余额</h4><p id="balance">
+            <script>getmemberInfo(${userInfoList},"balance")</script>
+        </p></a></div>
     </div>
-    <ul class="vipul">
+    <ul class="vipul" id="vipUl">
         <li>
             <a href="#">
                 <div class="icc"><i class="iconfont icon-xitongmingpian"></i></div>
@@ -54,7 +61,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="../home/sellCenter">
                 <div class="icc"><i class="iconfont icon-huodongfj"></i></div>
                 <div class="lzz">活动中心</div>
                 <div class="rizi"><i class="iconfont icon-jiantouri"></i></div>
@@ -82,6 +89,11 @@
             </a>
         </li>
     </ul>
+
+    <script>
+        memberRegister("vipCenter",${userInfoList})
+    </script>
+
 </div>
 <div class="footnav">
     <div class="col-xs-3 text-center"><a href="index.html"><i class="iconfont icon-shop"></i><p>积分商城</p></a></div>

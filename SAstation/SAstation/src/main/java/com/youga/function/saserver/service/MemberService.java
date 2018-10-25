@@ -12,6 +12,21 @@ public interface MemberService {
     public String isMember(String openid);
 
     /***
+     * 微信信息入库
+     */
+    public String insertUser(WxInfo user);
+
+    /***
+     * 更新用户信息
+     */
+    public String updataUser(WxInfo user);
+
+    /**
+     * 获取用户微信信息
+     */
+    public WxInfo getWxInfo(String openid);
+
+    /***
      * 发送验证码
      * 功能点:首次登陆用户/未注册用户手机绑定短信验证码
      */
@@ -20,7 +35,7 @@ public interface MemberService {
     /***
      * 注册会员信息
      */
-    public String registerMember(WxInfo user,String msisdn,String verificationCode);
+    public String registerMember(WxInfo user,String msisdn);
 
     /***
      * 查询会员信息
@@ -28,6 +43,9 @@ public interface MemberService {
      */
     public MemberInfo getMemberInfo(String openid);
 
-
-
+    /***
+     * 查询是否为会员/是否绑定手机号
+     * 注册信息
+     */
+    String CheckMember(String userId);
 }

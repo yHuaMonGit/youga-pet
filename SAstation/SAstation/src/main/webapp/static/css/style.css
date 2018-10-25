@@ -2,14 +2,14 @@
 body,h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { margin: 0px ; font-family:"Microsoft Yahei","微软雅黑", Arial,"宋体","sans-serif";; }
 
 html { -webkit-text-size-adjust:none;}
-ol, ul ,li{list-style: none;}
+ol, ul ,li{list-style: none;background:#FFF68F;}
 a { text-decoration:none; cursor:pointer;}
 a:hover { text-decoration: none;}
 img {border: 0;}
 
 .btn-danger { background: #FF2626; border-color: #FF2626;}
 
-.huibg { background: #EEEEEE;}
+.huibg { background: #FFF68F;}
 .navbar { background: #fff; border-bottom: 1px solid #ddd; margin-bottom: 0px; position: relative;}
 .navbar .navbar-tit {padding: 15px 15px; color: #FF2626;font-size: 18px;line-height: 20px;}
 .navbar .logo { width: 56px; height: 56px; background: #fff; padding: 5px; border-radius: 100%; border: 4px solid #ddd; top: 22px; left: 12px; position: absolute;}
@@ -41,7 +41,7 @@ img {border: 0;}
 }
 
 .nav-tabs>li>a {
-	color: #333;
+    color: #333;
     margin-right: 2px;
     line-height: 1.428571429; background: #fff;
     border: 1px solid #ddd;
@@ -191,25 +191,33 @@ img {border: 0;}
 /*新增会员中心CSS*/
 
 .vipcenter { padding: 0px;}
-.vipcenter .vipheader { padding: 1em; height: 165px; background: url(../images/hbg.png); background-size: cover;}
+.vipcenter .bindingPhone { padding: 1em; height: 100%; background: url(../img/registbac.jpg); background-size: cover;}
+.vipcenter .bindingPhone .phoneTips { font-size: 1.2em;margin-top:40%;width:80%; line-height: 2em; }
+.vipcenter .bindingPhone .phoneTips .phoneNumInput { border: 1px solid #ccc; padding: 5px 0px;padding-left:5px; margin-left: 0%;width:60%; }
+.vipcenter .bindingPhone .phoneTips .phoneNumVerify { font-size: 1.0em; color: #fff; margin-left: 2%;height:2.65em;width:38%;border:0;padding:0;background: #1E90FF;border-radius: 3px;}
+.vipcenter .bindingPhone .verifyDiv { font-size: 1.2em; margin-top:5%;width:80%;line-height: 2em; }
+.vipcenter .bindingPhone .verifyDiv .verifyInput {border: 1px solid #ccc;padding: 5px 0px;padding-left:5px; margin-left: 0%;width:60%; }
+.vipcenter .bindingPhone .submitDiv { font-size: 1.2em; margin-top:5%;width:80%; line-height: 2em;}
+.vipcenter .bindingPhone .submitDiv .verifySubmit {  font-size: 1.0em; color: #fff;width:100%; height:2.65em;border:0;padding:0;background-color: #4CAF50; }
+.vipcenter .vipheader { padding: 1em; height: 185px; background: url(../images/memcenterbc.jpg); background-size: cover;}
 .vipcenter .vipheader .touxiang { width: 72px; height: 72px; margin: 0px auto; border-radius: 100%; border: 2px solid #fff;}
 .vipcenter .vipheader .touxiang img { border-radius: 100%; width: 100%;}
 .vipcenter .vipheader .name { font-size: 1.4em; text-align: center; color: #fff; line-height: 2em;}
 .vipcenter .vipheader .gztt { font-size: 1em; text-align: center; color: #fff;}
-.vipcenter .vipsan { padding: 14px 0; background: #fff; border-bottom:1px solid #ccc; overflow: auto; margin-bottom: 10px;}
-.vipcenter .vipsan div { border-right:1px solid #ccc;}
+.vipcenter .vipsan { padding: 14px 0; background: #fff;background: url(../images/vipbc.jpg); border-bottom:1px solid #ccc; overflow: auto; margin-bottom: px;}
+.vipcenter .vipsan div { border-right:2px solid #ccc;}
 .vipcenter .vipsan div:last-child { border: 0px;}
 .vipcenter .vipsan a { color: #666; }
-.vipcenter .vipsan h4 { font-size: 1em; line-height: 1.5em;}
-.vipcenter .vipsan p { color: red; padding: 0px; margin: 0px;}
+.vipcenter .vipsan h4 { font-size: 1.1em; line-height: 1.5em;color:#0A0A0A;font-weight:bold;font-family: "Microsoft JhengHei";}
+.vipcenter .vipsan p { color: #0A0A0A; padding: 0px; margin: 0px;font-family: "Microsoft JhengHei";}
 .vipcenter .vipul { background: #fff; padding: 0px; margin: 0px; border:1px solid #ccc; border-width: 1px 0;}
 .vipcenter .vipul li { padding: 0px 0px; overflow: auto; border-bottom:1px solid #ccc; position: relative;}
 .vipcenter .vipul li:last-child { border: 0px;}
-.vipcenter .vipul li a { color: #666; display:block; padding: 15px 10px; height: 50px; position: relative;  width: 100%;}
+.vipcenter .vipul li a { font-size: 1.2em;color: #666; display:block; padding: 15px 10px; height: 50px; position: relative;  width: 100%;}
 .vipcenter .vipul li .rizi { position: absolute; right: 10px;}
 .vipcenter .vipul li .lvzi { color: #00B285;}
 .vipcenter .vipul li .redzi { color: red;}
-.vipcenter .vipul li .lzz { float: left;}
+.vipcenter .vipul li .lzz { float: left;color: #0A0A0A;font-family: "Microsoft JhengHei";}
 .vipcenter .vipul li .icc { float: left; padding-right: 1em; display: block;}
 .vipcenter .vipul li:nth-child(10n+1) .icc { color: #00B285;}
 .vipcenter .vipul li:nth-child(10n+2) .icc { color: #00A1DF;}

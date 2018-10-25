@@ -34,12 +34,24 @@ public interface MemberDao {
     /***
      * 查询会员信息
      */
-    public String getMemberInfo(String openid);
+    public MemberInfo getMemberInfo(String openid);
 
     /***
      * 会员信息变更(手机号变更)
      */
     public String updateMemberInfo(MemberInfo memberInfo);
 
+    /**
+     * 查询是否注册会员
+     * @param openid
+     * @return
+     */
+    public String isMemberExist(String openid);
 
+    /**
+     * 获取用户微信信息
+     * @param openid
+     * @return
+     */
+    public WxInfo getWxInfo(String openid);
 }

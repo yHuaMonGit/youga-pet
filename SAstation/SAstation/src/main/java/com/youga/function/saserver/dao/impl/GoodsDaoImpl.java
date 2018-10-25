@@ -23,29 +23,22 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao {
         Connection conn = null;
         try {
             conn = BaseDao.getConnection();
-
-
-        String sql = "select * from double_eleven_goods_info;";
-
-        PreparedStatement stmt = conn.prepareStatement(sql);
-
-        ResultSet rs = stmt.executeQuery();
-
-
-
-        while(rs.next())
-        {
-            GoodsInfo goods=new GoodsInfo(
+            String sql = "select * from double_eleven_goods_info;";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next())
+            {
+                GoodsInfo goods=new GoodsInfo(
                     rs.getString("goodsName"),
                     rs.getInt("goodsPrice"),
                     rs.getInt("goodsNum"),
                     rs.getString("goodsDes"),
                     rs.getString("goodsPic"),
                     rs.getInt("goodsPrePrice")
-            );
-            goodsList.add(goods);
-        }
-        BaseDao.closeAll(conn, stmt, rs);
+                );
+                goodsList.add(goods);
+            }
+            BaseDao.closeAll(conn, stmt, rs);
 
         } catch (SQLException e) {
             e.printStackTrace();
