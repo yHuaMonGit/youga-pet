@@ -7,9 +7,9 @@ import java.sql.*;
 
 public class BaseDao {
     private static String driver="com.mysql.jdbc.Driver";
-    private static String url="jdbc:mysql://39.106.169.195:3306/youga_pet";
+    private static String url="jdbc:mysql://ip:3306/youga_pet";
     private static String user="admin";
-    private static String password="123456";
+    private static String password="admin";
     static {
         try {
             Class.forName(driver);
